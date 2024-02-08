@@ -1,4 +1,4 @@
-class measureOfCentralTendency {
+class MeasureOfCentralTendency {
     constructor (array) {
         this.data = array
     }
@@ -80,7 +80,7 @@ class measureOfCentralTendency {
     }
 }
 
-const calculateMCT = new measureOfCentralTendency([11, 2, 17, 11, 1, 9, 12, 17, 21, 15, 14, 11, 18])
+const calculateMCT = new MeasureOfCentralTendency([11, 2, 17, 11, 1, 9, 12, 17, 21, 15, 14, 11, 18])
 
 
 
@@ -88,7 +88,7 @@ const calculateMCT = new measureOfCentralTendency([11, 2, 17, 11, 1, 9, 12, 17, 
 
 
 
-class measureOfDispersion {
+class MeasureOfDispersion {
     constructor (array) {
         this.data = array
     }
@@ -108,7 +108,7 @@ class measureOfDispersion {
 
     variance () {
         // get the mean first
-        let getMean = new measureOfCentralTendency(this.data)
+        let getMean = new MeasureOfCentralTendency(this.data)
         const mean = Math.floor(getMean.mean())
 
         // Calculate the squared differences
@@ -128,7 +128,7 @@ class measureOfDispersion {
 
     meanAbsoluteDeviation () {
         // get the mean first
-        let getMean = new measureOfCentralTendency(this.data)
+        let getMean = new MeasureOfCentralTendency(this.data)
         const mean = Math.floor(getMean.mean())
 
         // Calculate the absolute differences
@@ -149,10 +149,10 @@ class measureOfDispersion {
         const lowerHalf = sortedData.slice(0, middleIndex);
         const upperHalf = sortedData.slice(middleIndex + (sortedData.length % 2 === 0 ? 0 : 1))
 
-        let getMedian = new measureOfCentralTendency(lowerHalf)
+        let getMedian = new MeasureOfCentralTendency(lowerHalf)
         const q1 = Math.floor(getMedian.median())
 
-        getMedian = new measureOfCentralTendency(upperHalf)
+        getMedian = new MeasureOfCentralTendency(upperHalf)
         const q3 = Math.floor(getMedian.median())
 
         const iqr = q3 - q1
@@ -162,7 +162,7 @@ class measureOfDispersion {
     }
 }
 
-const calculateMOD = new measureOfDispersion([4, 9, 17, 1, 11, 6, 12, 13, 5, 25, 17, 15, 9, 7, 8, 12, 23, 6, 12])
+const calculateMOD = new MeasureOfDispersion([4, 9, 17, 1, 11, 6, 12, 13, 5, 25, 17, 15, 9, 7, 8, 12, 23, 6, 12])
 
 
 // exmaples
